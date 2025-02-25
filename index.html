@@ -4,527 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edged Canvas | Functional Art from Canada</title>
-    <style>
-/* Base Styles */
-:root {
-    --primary-color: #2c3e50;
-    --accent-color: #e67e22;
-    --light-bg: #f9f9f9;
-    --dark-bg: #34495e;
-    --text-color: #333;
-    --light-text: #f9f9f9;
-    --border-radius: 4px;
-    --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    --transition: all 0.3s ease;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-section {
-    padding: 5rem 2rem;
-}
-
-/* Header Styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.2rem;
-    color: var(--primary-color);
-}
-
-.logo p {
-    font-size: 0.9rem;
-    color: var(--accent-color);
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 1.5rem;
-}
-
-nav ul li a {
-    font-weight: 500;
-    padding: 0.5rem;
-}
-
-nav ul li a:hover {
-    color: var(--accent-color);
-}
-
-/* Hero Section */
-.hero {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--light-text);
-    text-align: center;
-    padding: 8rem 2rem;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    box-shadow: var(--box-shadow);
-}
-
-.cta-button:hover {
-    background-color: #d35400;
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* Products Section */
-.products {
-    text-align: center;
-    background-color: white;
-}
-
-.products h2 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.product-card {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.product-card img {
-    height: 200px;
-    object-fit: cover;
-    width: 100%;
-}
-
-.product-card h3 {
-    padding: 1rem 1rem 0.5rem;
-    color: var(--primary-color);
-}
-
-.product-card p {
-    padding: 0 1rem 1rem;
-    font-size: 0.9rem;
-}
-
-.product-link {
-    display: block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.5rem;
-    transition: var(--transition);
-}
-
-.product-link:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-/* Process Section */
-.process {
-    background-color: var(--light-bg);
-}
-
-.process h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-.process-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.process-image {
-    flex: 1;
-    min-width: 300px;
-}
-
-.process-image img {
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.process-text {
-    flex: 1;
-    min-width: 300px;
-    padding: 2rem;
-}
-
-.process-text p {
-    margin-bottom: 1rem;
-}
-
-.secondary-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    margin-top: 1rem;
-}
-
-.secondary-button:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-/* Stream Section */
-.stream {
-    background-color: white;
-    text-align: center;
-}
-
-.stream h2 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-.stream-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.live-now {
-    margin-bottom: 3rem;
-}
-
-.live-now h3, 
-.past-streams h3 {
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-#liveStreamContainer {
-    aspect-ratio: 16/9;
-    background-color: #000;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-#pastStreamsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-/* About Section */
-.about {
-    background-color: var(--light-bg);
-}
-
-.about h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-text {
-    flex: 3;
-    min-width: 300px;
-    padding: 0 2rem 2rem 0;
-}
-
-.about-text p {
-    margin-bottom: 1rem;
-}
-
-.about-image {
-    flex: 2;
-    min-width: 300px;
-}
-
-.about-image img {
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-/* Contact Section */
-.contact {
-    background-color: white;
-    text-align: center;
-}
-
-.contact h2 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    margin-bottom: 1rem;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    font-family: inherit;
-}
-
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-info {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-}
-
-.contact-info h3 {
-    margin-bottom: 1.5rem;
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-}
-
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-link {
-    display: inline-block;
-    margin-right: 1rem;
-    color: white;
-    border-bottom: 1px solid transparent;
-}
-
-.social-link:hover {
-    border-bottom: 1px solid white;
-    color: white;
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark-bg);
-    color: white;
-    padding: 3rem 2rem 1rem;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-}
-
-.footer-logo h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.footer-logo p {
-    font-size: 0.9rem;
-    color: #bbb;
-}
-
-.footer-links ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links ul li a {
-    color: #bbb;
-}
-
-.footer-links ul li a:hover {
-    color: white;
-}
-
-.footer-newsletter h3 {
-    margin-bottom: 1rem;
-}
-
-.footer-newsletter form {
-    display: flex;
-}
-
-.footer-newsletter input {
-    padding: 0.5rem;
-    border: none;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-}
-
-.footer-newsletter button {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.9rem;
-    color: #bbb;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    nav ul {
-        margin-top: 1rem;
-    }
-    
-    nav ul li {
-        margin: 0 0.75rem;
-    }
-    
-    .hero h2 {
-        font-size: 2.2rem;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content > div {
-        flex-basis: 100%;
-        margin-bottom: 2rem;
-    }
-    
-    .process-content > div,
-    .about-content > div {
-        flex-basis: 100%;
-    }
-    
-    .process-text,
-    .about-text {
-        padding: 2rem 0;
-    }
-}
-</style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>EdgedCanvas</h1>
+            <a href="/">
+                <svg width="50" height="50" viewBox="0 0 100 100">
+                    <path d="M10,50 Q10,10 50,10 Q90,10 90,50 Q90,90 50,90 Q10,90 10,50" fill="none" stroke="#e67e22" stroke-width="3"/>
+                    <path d="M20,50 Q20,20 50,20 Q80,20 80,50 Q80,80 50,80 Q20,80 20,50" fill="none" stroke="#2c3e50" stroke-width="3"/>
+                </svg>
+                <h1>EdgedCanvas</h1>
+            </a>
             <p>Functional Art, Handcrafted in Canada</p>
         </div>
         <nav>
-            <ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="#products">Products</a></li>
                 <li><a href="#process">Our Process</a></li>
                 <li><a href="#stream">Live Streams</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="cta-nav">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -532,326 +41,606 @@ footer {
     <section class="hero">
         <div class="hero-content">
             <h2>Where Artistry Meets Functionality</h2>
-            <p>Handcrafted in Canada, designed for your space</p>
-            <a href="#products" class="cta-button">Explore Our Work</a>
+            <p>Handcrafted Canadian designs that transform everyday objects into meaningful art</p>
+            <div class="hero-buttons">
+                <a href="#products" class="cta-button">Explore Our Work</a>
+                <a href="#stream" class="cta-button secondary">Watch Live</a>
+            </div>
+            <div class="hero-badge">
+                <span>Made in</span>
+                <img src="images/canada-icon.svg" alt="Canadian Made" width="20" height="20">
+                <span>Canada</span>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <div class="scroll-icon">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <p>Scroll to discover</p>
+        </div>
+    </section>
+
+    <section id="featured" class="featured">
+        <div class="featured-banner">
+            <h3>Featured Collection</h3>
+        </div>
+        <div class="featured-product">
+            <div class="featured-image">
+                <img src="images/sound-panel-featured.jpg" alt="Premium Acoustic Panel" class="parallax-img">
+            </div>
+            <div class="featured-content">
+                <span class="tag">Best Seller</span>
+                <h2>Acoustic Art Panels</h2>
+                <p class="featured-desc">Our signature collection combines premium sound absorption with stunning visual designs. Each panel is handcrafted to enhance your space acoustically and aesthetically.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Custom sizes and designs</li>
+                    <li><i class="fas fa-check"></i> NRC rating of 0.85+</li>
+                    <li><i class="fas fa-check"></i> Eco-friendly materials</li>
+                    <li><i class="fas fa-check"></i> Made for homes & businesses</li>
+                </ul>
+                <a href="products/acoustic-panels.html" class="cta-button">Explore Acoustic Art</a>
+            </div>
         </div>
     </section>
 
     <section id="products" class="products">
         <h2>Our Creations</h2>
+        <p class="section-subtitle">Functional art that enhances your everyday life</p>
+        
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="acoustic">Acoustic</button>
+            <button class="filter-btn" data-filter="leather">Leather</button>
+            <button class="filter-btn" data-filter="wood">Wood</button>
+            <button class="filter-btn" data-filter="metal">Metal</button>
+        </div>
+        
         <div class="product-grid">
-            <div class="product-card">
-                <img src="images/sound-panel.jpg" alt="Acoustic Sound Panel">
-                <h3>Acoustic Sound Panels</h3>
-                <p>Beautiful wall art that improves your room's acoustics</p>
-                <a href="products/sound-panels.html" class="product-link">Learn More</a>
+            <div class="product-card" data-category="acoustic">
+                <div class="product-image">
+                    <img src="images/sound-panel.jpg" alt="Acoustic Sound Panel">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <a href="products/sound-panels.html" class="view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Acoustic Sound Panels</h3>
+                    <p>Beautiful wall art that improves your room's acoustics</p>
+                    <span class="product-price">From $149</span>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="images/watch-strap.jpg" alt="Leather Watch Strap">
-                <h3>Engraved Leather Watch Straps</h3>
-                <p>Laser engraved designs on premium leather</p>
-                <a href="products/watch-straps.html" class="product-link">Learn More</a>
+
+            <div class="product-card" data-category="leather">
+                <div class="product-image">
+                    <img src="images/watch-strap.jpg" alt="Leather Watch Strap">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <a href="products/watch-straps.html" class="view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Engraved Leather Watch Straps</h3>
+                    <p>Laser engraved designs on premium leather</p>
+                    <span class="product-price">From $59</span>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="images/knife.jpg" alt="Handcrafted Knife">
-                <h3>Artisan Knives</h3>
-                <p>Functional tools with artistic craftsmanship</p>
-                <a href="products/knives.html" class="product-link">Learn More</a>
+
+            <div class="product-card" data-category="metal">
+                <div class="product-image">
+                    <img src="images/knife.jpg" alt="Handcrafted Knife">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <a href="products/knives.html" class="view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Artisan Knives</h3>
+                    <p>Functional tools with artistic craftsmanship</p>
+                    <span class="product-price">From $129</span>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="images/speaker.jpg" alt="Bookshelf Speaker">
-                <h3>Designer Bookshelf Speakers</h3>
-                <p>Audio equipment that enhances your décor</p>
-                <a href="products/speakers.html" class="product-link">Learn More</a>
+
+            <div class="product-card" data-category="wood acoustic">
+                <div class="product-image">
+                    <img src="images/speaker.jpg" alt="Bookshelf Speaker">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <a href="products/speakers.html" class="view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Designer Bookshelf Speakers</h3>
+                    <p>Audio equipment that enhances your décor</p>
+                    <span class="product-price">From $299</span>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="wood">
+                <div class="product-image">
+                    <img src="images/desk-organizer.jpg" alt="Wooden Desk Organizer">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <a href="products/desk-organizers.html" class="view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Wooden Desk Organizer</h3>
+                    <p>Handcrafted wooden organizers for your workspace</p>
+                    <span class="product-price">From $79</span>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="acoustic">
+                <div class="product-image">
+                    <img src="images/ceiling-cloud.jpg" alt="Acoustic Ceiling Cloud">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <a href="products/ceiling-clouds.html" class="view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Acoustic Ceiling Clouds</h3>
+                    <p>Suspended acoustic treatment with artistic flair</p>
+                    <span class="product-price">From $199</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-all-container">
+            <a href="products.html" class="view-all-btn">View All Products</a>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonial-container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <blockquote>
+                            The acoustic panels Edged Canvas created for our office not only solved our echo problems but became a conversation piece with clients. The custom design perfectly matched our brand identity.
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <img src="images/client-1.jpg" alt="Client" class="author-image">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Design Studio Owner, Vancouver</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <blockquote>
+                            I bought a custom knife as a gift for my husband, and he was blown away by the craftsmanship. Being able to watch parts of it being made on the livestream added a special connection to the piece.
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <img src="images/client-2.jpg" alt="Client" class="author-image">
+                            <div class="author-info">
+                                <h4>Michael Torres</h4>
+                                <p>Customer, Toronto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <blockquote>
+                            The bookshelf speakers I purchased are not only incredible sounding but are true works of art. Everyone who visits asks about them, and I'm proud to support Canadian craftsmanship.
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <img src="images/client-3.jpg" alt="Client" class="author-image">
+                            <div class="author-info">
+                                <h4>Priya Patel</h4>
+                                <p>Audiophile, Montreal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="testimonial-btn next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
     <section id="process" class="process">
         <h2>Our Craft Process</h2>
-        <div class="process-content">
-            <div class="process-image">
-                <img src="images/workshop.jpg" alt="Workshop">
+        <p class="section-subtitle">Watch how we bring functional art to life</p>
+        
+        <div class="process-timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="timeline-content left">
+                    <h3>Concept & Design</h3>
+                    <p>Every piece begins with thoughtful consideration of both aesthetics and function. We collaborate closely with clients to understand their needs and spaces.</p>
+                </div>
             </div>
-            <div class="process-text">
-                <p>Every piece at Edged Canvas is crafted with care in our Canadian workshop. We believe in transparency, which is why we regularly live stream our creative process.</p>
-                <p>Join our community to watch how your pieces come to life, ask questions, and be part of the journey from concept to completion.</p>
-                <a href="#stream" class="secondary-button">Watch Us Create</a>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <div class="timeline-content right">
+                    <h3>Material Selection</h3>
+                    <p>We source premium, sustainable materials from local Canadian suppliers, prioritizing quality and environmental responsibility.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="timeline-content left">
+                    <h3>Crafting</h3>
+                    <p>Our artisans meticulously handcraft each piece in our workshop. This stage is often livestreamed, allowing customers to witness their piece coming to life.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-check-double"></i>
+                </div>
+                <div class="timeline-content right">
+                    <h3>Quality Assurance</h3>
+                    <p>Each piece undergoes rigorous testing to ensure it meets both our artistic standards and functional requirements.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="process-video">
+            <div class="video-container">
+                <img src="images/workshop-preview.jpg" alt="Workshop Preview" class="video-preview">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+            <div class="video-caption">
+                <h3>Tour Our Workshop</h3>
+                <p>See where the magic happens in our Vancouver studio</p>
             </div>
         </div>
     </section>
 
     <section id="stream" class="stream">
         <h2>Live & Recorded Streams</h2>
-        <div class="stream-content">
+        <p class="section-subtitle">Join our community and watch our creation process</p>
+        
+        <div class="stream-container">
             <div class="live-now">
-                <h3>Currently Live</h3>
+                <div class="live-badge">
+                    <span id="streamStatus">OFFLINE</span>
+                </div>
                 <div id="liveStreamContainer">
-                    <!-- Live stream will be loaded here via JavaScript -->
+                    <!-- Live stream content will be loaded here via JavaScript -->
+                </div>
+                <div class="stream-schedule">
+                    <h3>Upcoming Streams</h3>
+                    <div class="schedule-items">
+                        <div class="schedule-item">
+                            <div class="schedule-date">
+                                <span class="day">FRI</span>
+                                <span class="time">7PM EST</span>
+                            </div>
+                            <div class="schedule-info">
+                                <h4>Creating Custom Sound Panels</h4>
+                                <p>For a local recording studio project</p>
+                            </div>
+                            <button class="reminder-btn" data-stream-id="next-friday">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-date">
+                                <span class="day">TUE</span>
+                                <span class="time">2PM EST</span>
+                            </div>
+                            <div class="schedule-info">
+                                <h4>Leather Watch Strap Design</h4>
+                                <p>Custom geometric pattern engraving</p>
+                            </div>
+                            <button class="reminder-btn" data-stream-id="next-tuesday">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
             <div class="past-streams">
                 <h3>Recent Recordings</h3>
                 <div id="pastStreamsGrid">
                     <!-- Past streams will be loaded here via JavaScript -->
                 </div>
+                <div class="view-more-container">
+                    <a href="streams.html" class="view-more-btn">View All Recordings</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="community-banner">
+            <div class="community-content">
+                <h3>Join Our Creator Community</h3>
+                <p>Get early access to streams, exclusive behind-the-scenes content, and member discounts</p>
+                <div class="community-cta">
+                    <a href="community.html" class="cta-button">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-solutions">
+        <div class="business-container">
+            <div class="business-content">
+                <span class="solution-tag">For Businesses</span>
+                <h2>Custom Acoustic Solutions</h2>
+                <p>Transform your commercial space with custom-designed acoustic treatments that reflect your brand identity while solving sound issues.</p>
+                <ul class="business-benefits">
+                    <li><i class="fas fa-building"></i> Office spaces & meeting rooms</li>
+                    <li><i class="fas fa-utensils"></i> Restaurants & hospitality</li>
+                    <li><i class="fas fa-music"></i> Studios & performance venues</li>
+                    <li><i class="fas fa-store"></i> Retail environments</li>
+                </ul>
+                <a href="business-solutions.html" class="cta-button">Business Inquiries</a>
+            </div>
+            <div class="business-image">
+                <img src="images/business-acoustic.jpg" alt="Business Acoustic Solutions">
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <h2>About Edged Canvas</h2>
+        <p class="section-subtitle">Crafting functional art with Canadian pride</p>
+        
         <div class="about-content">
-            <div class="about-text">
-                <p>Founded in Canada with a passion for functional art, Edged Canvas brings together craftsmanship and practical design. We specialize in creating pieces that serve a purpose while enhancing your space aesthetically.</p>
-                <p>Our focus on acoustic sound panels for businesses and homes has allowed us to develop unique solutions that combine visual appeal with acoustic performance.</p>
-                <p>As a small local business, we take pride in sourcing materials within Canada and supporting our local economy.</p>
+            <div class="about-images">
+                <img src="images/about-main.jpg" alt="Our Workshop" class="about-main-img">
+                <div class="about-small-images">
+                    <img src="images/about-detail-1.jpg" alt="Crafting Detail" class="about-detail">
+                    <img src="images/about-detail-2.jpg" alt="Material Selection" class="about-detail">
+                </div>
             </div>
-            <div class="about-image">
-                <img src="images/team.jpg" alt="Our Team">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Founded in Vancouver with a passion for merging aesthetics with functionality, Edged Canvas brings together traditional craftsmanship and innovative design. We specialize in creating pieces that serve practical purposes while enhancing your space visually.</p>
+                
+                <h3>Our Philosophy</h3>
+                <p>We believe everyday objects deserve thoughtful design. Our focus on acoustic sound panels has allowed us to develop unique solutions that transform problematic spaces while adding artistic elements that inspire.</p>
+                
+                <h3>Local Craftsmanship</h3>
+                <p>As a small Canadian business, we take pride in sourcing materials locally and supporting our community's economy. Every piece is handcrafted in our Vancouver workshop, ensuring quality and attention to detail.</p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Sustainability</h4>
+                        <p>Eco-conscious materials and practices</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Community</h4>
+                        <p>Supporting local suppliers and artists</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-star"></i>
+                        <h4>Quality</h4>
+                        <p>Exceptional craftsmanship in every piece</p>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="secondary-button">Learn More About Us</a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
-        <div class="contact-grid">
-            <div class="contact-form">
-                <form id="contactForm">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <select name="interest">
-                        <option value="">I'm interested in...</option>
-                        <option value="sound-panels">Sound Panels</option>
-                        <option value="watch-straps">Watch Straps</option>
-                        <option value="knives">Artisan Knives</option>
-                        <option value="speakers">Bookshelf Speakers</option>
-                        <option value="custom">Custom Project</option>
-                    </select>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
+        <p class="section-subtitle">Questions, custom orders, or business inquiries? We'd love to hear from you.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Visit Our Workshop</h3>
+                        <p>123 Craftsman Avenue<br>Vancouver, BC, Canada</p>
+                        <p class="detail-note">By appointment only</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Us</h3>
+                        <p>hello@edgedcanvas.com</p>
+                        <p class="detail-note">We respond within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Call Us</h3>
+                        <p>(604) 555-7890</p>
+                        <p class="detail-note">Mon-Fri, 9AM-5PM PST</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-header">
+                        <h3>Send Us a Message</h3>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">I'm interested in...</label>
+                        <select id="interest" name="interest">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="sound-panels">Sound Panels</option>
+                            <option value="watch-straps">Watch Straps</option>
+                            <option value="knives">Artisan Knives</option>
+                            <option value="speakers">Bookshelf Speakers</option>
+                            <option value="business">Business Solutions</option>
+                            <option value="custom">Custom Project</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group consent-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I agree to the processing of my data as outlined in the <a href="privacy.html">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="cta-button full-width">Send Message</button>
                 </form>
             </div>
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><strong>Email:</strong> hello@edgedcanvas.com</p>
-                <p><strong>Location:</strong> Vancouver, BC, Canada</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">YouTube</a>
-                    <a href="#" class="social-link">Twitch</a>
-                </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Stay In The Loop</h2>
+                <p>Subscribe to receive updates on new products, upcoming livestreams, and exclusive offers</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <div class="newsletter-consent">
+                        <input type="checkbox" id="newsletter-consent" required>
+                        <label for="newsletter-consent">I agree to receive email communications from Edged Canvas</label>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h2>EdgedCanvas</h2>
-                <p>Functional Art, Handcrafted in Canada</p>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 100 100">
+                            <path d="M10,50 Q10,10 50,10 Q90,10 90,50 Q90,90 50,90 Q10,90 10,50" fill="none" stroke="#e67e22" stroke-width="3"/>
+                            <path d="M20,50 Q20,20 50,20 Q80,20 80,50 Q80,80 50,80 Q20,80 20,50" fill="none" stroke="#2c3e50" stroke-width="3"/>
+                        </svg>
+                        <h2>EdgedCanvas</h2>
+                    </div>
+                    <p>Handcrafted functional art pieces created with pride in Vancouver, Canada.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="products/sound-panels.html">Acoustic Panels</a></li>
+                            <li><a href="products/watch-straps.html">Watch Straps</a></li>
+                            <li><a href="products/knives.html">Artisan Knives</a></li>
+                            <li><a href="products/speakers.html">Bookshelf Speakers</a></li>
+                            <li><a href="products.html">All Products</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="process.html">Our Process</a></li>
+                            <li><a href="business-solutions.html">Business Solutions</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-link-group">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="streams.html">Live Streams</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="shipping.html">Shipping Information</a></li>
-                </ul>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 Edged Canvas. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="shipping.html">Shipping Information</a>
+                    </div>
+                </div>
+                <div class="footer-payment">
+                    <p>Secure Payments</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
             </div>
-            <div class="footer-newsletter">
-                <h3>Stay Updated</h3>
-                <form id="newsletterForm">
-                    <input type="email" placeholder="Your Email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 Edged Canvas. All rights reserved.</p>
         </div>
     </footer>
-document.addEventListener('DOMContentLoaded', function() {
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            const formValues = Object.fromEntries(formData.entries());
-            
-            // Here you would typically send the form data to your server
-            console.log('Form submitted:', formValues);
-            
-            // Show success message
-            contactForm.innerHTML = '<div class="success-message"><h3>Thank you for your message!</h3><p>We\'ll get back to you soon.</p></div>';
-        });
-    }
-    
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('input[type="email"]').value;
-            
-            // Here you would typically send the email to your server
-            console.log('Newsletter signup:', email);
-            
-            // Show success message
-            newsletterForm.innerHTML = '<p class="success-message">Thank you for subscribing!</p>';
-        });
-    }
-    
-    // Live stream functionality
-    const liveStreamContainer = document.getElementById('liveStreamContainer');
-    if (liveStreamContainer) {
-        // Check if there's a live stream
-        const isLive = false; // This would be determined by your backend
-        
-        if (isLive) {
-            // Embed live stream
-            liveStreamContainer.innerHTML = `
-                <div class="stream-placeholder">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" frameborder="0" allowfullscreen></iframe>
-                </div>
-            `;
-        } else {
-            // Show placeholder with next stream info
-            liveStreamContainer.innerHTML = `
-                <div class="stream-placeholder">
-                    <div class="not-live-message">
-                        <h3>We're not live right now</h3>
-                        <p>Next stream: Fridays at 7PM EST</p>
-                        <p>Creating custom sound panels for a local recording studio</p>
-                        <a href="#" class="secondary-button">Set Reminder</a>
-                    </div>
-                </div>
-            `;
-        }
-    }
-    
-    // Past streams grid
-    const pastStreamsGrid = document.getElementById('pastStreamsGrid');
-    if (pastStreamsGrid) {
-        // This would typically come from your backend
-        const pastStreams = [
-            {
-                id: 1,
-                title: 'Making Acoustic Art Panels',
-                thumbnail: 'images/stream-thumb-1.jpg',
-                url: '#',
-                date: '2 weeks ago'
-            },
-            {
-                id: 2,
-                title: 'Leather Watch Strap Engraving',
-                thumbnail: 'images/stream-thumb-2.jpg',
-                url: '#',
-                date: '3 weeks ago'
-            },
-            {
-                id: 3,
-                title: 'Custom Knife Handle Carving',
-                thumbnail: 'images/stream-thumb-3.jpg',
-                url: '#',
-                date: '1 month ago'
-            },
-            {
-                id: 4,
-                title: 'Speaker Cabinet Design',
-                thumbnail: 'images/stream-thumb-4.jpg',
-                url: '#',
-                date: '1 month ago'
-            }
-        ];
-        
-        // Populate past streams
-        pastStreams.forEach(stream => {
-            const streamEl = document.createElement('div');
-            streamEl.className = 'stream-card';
-            streamEl.innerHTML = `
-                <a href="${stream.url}">
-                    <div class="stream-thumbnail">
-                        <img src="${stream.thumbnail}" alt="${stream.title}">
-                        <div class="stream-date">${stream.date}</div>
-                    </div>
-                    <h4>${stream.title}</h4>
-                </a>
-            `;
-            pastStreamsGrid.appendChild(streamEl);
-        });
-        
-        // Add stream card styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .stream-card {
-                border-radius: var(--border-radius);
-                overflow: hidden;
-                box-shadow: var(--box-shadow);
-                transition: var(--transition);
-            }
-            
-            .stream-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            }
-            
-            .stream-thumbnail {
-                position: relative;
-            }
-            
-            .stream-thumbnail img {
-                width: 100%;
-                height: 150px;
-                object-fit: cover;
-            }
-            
-            .stream-date {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background-color: rgba(0,0,0,0.7);
-                color: white;
-                padding: 0.3rem 0.6rem;
-                font-size: 0.8rem;
-            }
-            
-            .stream-card h4 {
-                padding: 1rem;
-                color: var(--primary-color);
-            }
-            
-            .not-live-message {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                background-color: rgba(0,0,0,0.8);
-                color: white;
-                padding: 2rem;
-            }
-            
-            .not-live-message h3 {
-                margin-bottom: 1rem;
-                color: white;
-            }
-            
-            .not-live-message p {
-                margin-bottom: 0.5rem;
-            }
-            
-            .success-message {
-                padding: 2rem;
-                background-color: #e6f7e6;
-                border-radius: var(--border-radius);
-                text-align: center;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-});
-    <script>
 
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
